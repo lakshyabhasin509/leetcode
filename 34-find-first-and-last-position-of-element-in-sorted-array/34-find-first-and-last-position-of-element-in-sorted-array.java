@@ -2,6 +2,7 @@ class Solution {
     public int[] searchRange(int[] arr, int key) {
       int ans[]={-1,-1};
         ans[0]=helperFirstOrLast(arr,key,true);
+        if(ans[0]!=-1)
         ans[1]=helperFirstOrLast(arr,key,false);
         
         return ans;
