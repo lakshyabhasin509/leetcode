@@ -6,8 +6,8 @@ class Solution {
         int start=0;
         int end=arr.length-1;
         int mid;
-
-        while (start<=end){
+// using binary search
+        while (start<end){
             mid=start+((end-start)/2);
             if (arr[mid]<arr[mid+1])
             { start=mid+1;
@@ -16,8 +16,6 @@ class Solution {
 
                 end=mid;
             }
-            if(start==end)
-                break;
         }
        return start;
     }}
