@@ -2,14 +2,14 @@
         
  class Solution {
     public boolean checkIfExist(int[] arr) {
-        for (int i=0;i<arr.length;i++){
-            for (int j=0;j<arr.length;j++){
-                if (arr[i]==(arr[j]*2) && i!=j){
-                    return true;
-                }
-            }
-        }
-        return false;
+        Set<Integer> seen = new HashSet<Integer>();
+for (int element : arr) {
+	if (seen.contains(element * 2) || (element % 2 == 0 && seen.contains(element / 2))) {
+		return true;
+	}
+	seen.add(element);
+}
+return false;
     }
 }
 
