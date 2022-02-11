@@ -4,9 +4,12 @@ class Solution {
     Arrays.sort(arr);
         
         for(int i=0;i<arr.length;i++){
-            int search=BS(arr,(arr[i]*2));
+            
+                int search=BS(arr,(arr[i]*2));
             if(search!=-1 && search!=i)
                 return true;
+          
+            
         }
         return false;
     }
@@ -18,6 +21,7 @@ class Solution {
         
         while(start<=end){
             int mid=start+(end-start)/2;
+    
             if(arr[mid]<key)
                 start=mid+1;
             else if(arr[mid]>key)
