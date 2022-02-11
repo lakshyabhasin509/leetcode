@@ -1,14 +1,32 @@
 class Solution {
     public boolean checkIfExist(int[] arr) {
         
+    Arrays.sort(arr);
+        
         for(int i=0;i<arr.length;i++){
-            if(arr[i]%2==0){
-            for(int j=0;j<arr.length;j++){
-              if(arr[j]*2==arr[i] && j!=i){
-                  System.out.println(arr[i]+" "+arr[j]);
-                  return true;
-            }}
+            int search=BS(arr,(arr[i]*2));
+            if(search!=-1 && search!=i)
+                return true;
         }
-    }
         return false;
-}}
+    }
+    
+    
+    int BS(int[] arr,int key){
+        int start=0;
+        int end=arr.length-1;
+        
+        while(start<=end){
+            int mid=start+(end-start)/2;
+            if(arr[mid]<key)
+                start=mid+1;
+            else if(arr[mid]>key)
+                end=mid-1;
+            else return mid;
+        }
+        return -1;
+    }
+
+
+
+}
