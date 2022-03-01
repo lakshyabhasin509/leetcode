@@ -8,23 +8,20 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-// recursive method
+// Iterative Method
 
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-       
+       ListNode temp=head;
         if(head==null)
             return head;
-        Helper(head);
-        return head;
-    }
-    public void Helper(ListNode head){
-        if(head.next==null)
-            return;
-        if(head.val==head.next.val){
-            head.next=head.next.next;
-            Helper(head);
-        }else
-        Helper(head.next);
-}
+        while(head.next!=null){
+            if(head.val==head.next.val){
+                head.next=head.next.next;
+            }
+            else head=head.next;
+            
+        }
+    return temp;}
+
 }
