@@ -24,9 +24,9 @@ class Solution {
         tail2.next=second.next;
         second.next=null;
         
+        
+        
         return list1;
-        
-        
         
     }
 }
