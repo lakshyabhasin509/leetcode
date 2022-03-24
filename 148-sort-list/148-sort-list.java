@@ -18,7 +18,7 @@ class Solution {
 return merge(left,right);
     }
     
-    
+//     merge sort
     public ListNode getMid(ListNode head) {
         ListNode midprev=null;
         
