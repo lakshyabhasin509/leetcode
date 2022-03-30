@@ -22,7 +22,7 @@ class Node {
 */
 
 class Solution {
-   public Node connect(Node root) {
+    public Node connect(Node root) {
         if(root==null)return root;
    
     Queue<Node> q=new ArrayDeque<>();
@@ -39,8 +39,9 @@ class Solution {
            if(len-i==1)ptr.next=null;
             else ptr.next=q.peek();
             
-            if(ptr.left==null) break;
+            if(ptr.left!=null)
             q.add(ptr.left);
+            if(ptr.right!= null)
             q.add(ptr.right);
 
 
