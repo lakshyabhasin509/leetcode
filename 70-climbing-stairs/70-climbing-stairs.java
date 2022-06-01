@@ -3,8 +3,8 @@ class Solution {
     
     public int climbStairs(int n) {
          int dp[]=new int[n+1];
-        for(int i=0;i<n+1;i++)dp[i]=-1;
-        return solve(n,dp);
+        dp[0]=1;
+        return solveTab(n,dp);
     }
     public int solve(int n,int []dp){
         if(n==0)return dp[n]= 1;
@@ -13,5 +13,16 @@ class Solution {
         if(dp[n]!=-1)return dp[n];
         
         return dp[n]= solve(n-1,dp)+solve(n-2,dp);
+    }
+    
+    public int solveTab(int n,int []dp){
+        
+        for(int i=1;i<dp.length;i++){
+            if(i>1)
+            dp[i]=dp[i-1]+dp[i-2];
+            if(i<=1)dp[i]=dp[i-1];
+        
+        }
+        return dp[n];
     }
 }
